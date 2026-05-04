@@ -1,230 +1,691 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-<head translate="yes">
-<meta charset="UTF-8">
-<link rel="icon" type="image/x-icon" sizes="48x48" href="data:image/x-icon;base64,AAABAAEAMDAAAAAAIABiDwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAwAAAAMAgGAAAAVwL5hwAADylJREFUeJzNWnl4FUW2/1XfBMhyE0xCNjYDIiCgjgLBESEKiDxxBiUuLAoqMoiKioozo46M4DCCz3VwePhwQRAXniKoYTECDshAyEISNkEZSCBkgSz39t26u37zR3ff3NzcBPPNvO+983319VZ16ndOnTrnVFULdJBIKgAUIYQe8q4vgGusMhBATwBdAcRaVTwAGgBUADgMYA+APUKIH0N4RAGQQgjZUUw/F7gg6Qh5ziT5MMl8ki52nFxW24dJZobwdZAU/27wSsh9L5JLSdaFATJI6tZVWsUm+zm0TijVWTx7RerzXwXvsK5RJJ8KA65bRTICSSkpZcRPtlB2+1BBnqJpTsG+/x3gB5PcHdKR1hZowzCo6zoNo6WSdV2nruttCSQtnjbtIjn4XxIiRAu3kmywwLULvDU4SUYArOt6q3cRBGkgeWsolkgUcbKQjBJC6CRnA/gv67UBwEESQrRsJqWEopgme+TwUWz+5lvsKyrGqYpKGIYBp9OJIZcNxJjRI3FDzih0iYkBCQCteYX2Zd3/Rgix0sbUEc3PtjRrkDSklGyor4+oeZIsKyvjlJkPMD6tN2O69WS/K7J50613cvL0+zgiZzyTe/encKbyF7+8nms+/LhV++AQNI+YwebJPvtCI2GDt21+kg1e0zRJku+uXsvho8exsaEh2JHd+YqVq5iQkcX0voP4zMIXWVBYzPrGJuqGCcbj9fHEP05y5Tvv84prcoi4FM6YNZcN9Q2WEO1OdFuISaEY2wM/gGQjSUPTNIMk1374Ebt278vkrIEcPmosmxobaVia+vOyV4jYZN45czZ/OnEy2Ks3oNHt9dHl8VL1B6hZ9evrG7jgmYWEM5Xjf5XL8+fOU8pmhdhChQ6yVRpJDogoBK0gRdNV7rUa6jbTM2eq+MBDjzGpZz9u+iqPum4q5dP1nxFxKZz/2+dIkpokG90qXR4v3V4fVZ/fKj66vT42ulV6A+YcfWvlKorENN51zyzqmkYpJUvLDnLk9eNZV1sXbk72rN9rYWwZ7EK0/6RVMejSbDOprKzkxk1fBdVytuosu/cbwl/feTcNQ9Lj97PBpbJJ9ZhaD4I3i8vjZZPqYYNLZaNbJUm+sGQZEZvM9z/4kCSpqipLDpTS5/NF8lQ2pidbjAJJxRqBDJquy46kEcnn95Mkn124iM6MLB7+4Rh1KdngcgeN1SDpChkBl9dHLYSjT9Pp9vqpqh6OuP4mDskeRY/qaeWGwx8t1g0WVkFSCfU6y8K1bzOsrq7mK6/9hV/nbSFJer1e9h0yjPc8MJck2ej2UJIsLCnlu2s+YtGBMuqkOQe8PupS8thPJ7js1Tf56ptv8VTl6aApvbdmHUVCapD33r37+PTvn2ee9RwmlI1tWQuvRDLVkqxFDiOlpK7rvG3KPURcCqOTMrl8xds8VH6QXVJ6cM1H60kpqRsG12/YxNSsgXRm9GF6n0HM2/oNDUPSr2k8evxHXjZ0JOPTsxjTrRdHjr2Z1bV1NKTkTycrmNTrUj6zcDH37y9katYAwpnGhIws5n+7g2SLwGfjayCZCgB2wjQZQCLMACIAMzgJIXD48BFs+XYnZs2YjimTJ2Heb5/DI08/iwSnE6mpKYAQ0A0D76xeC82QyMhIh8fvx9pPPoNQBDpFRWHLtnycqjyNtLRUZGZmoPTQYXz/931QhMBFXRMx8NJ++PSLrzAhdxp69+6F/35jGSQEvty8LdxZCgtjooU5KEAuACIkMtMMlTh+4iRUt4oJ48fitaUvYuzo67B7XyECWgBJiYkwCDgUBQkJTvgDAei6Dp/Ph8yMtCCzBKcThmGAJPyBABwOB7qlpMCQRGxMDNJSknCqshKXD74Ma1etwO25t8EZH4fTZ6tN1KJFYiosrLk20Cw25/PNfssats83fkXEd+N7az8iSTa5VeZt+5ZrPl7P2nPnqfoD1A2D3+8t4BUjRjP9kkGcOHkqK0+foS+g0eMPsPbcOU7MncqEjD5M6tmPf1i0hJqu0+Xx0q9pLCkt599276Hq9ZEkCwqL2bX7JZx672ySraK1jdFFMgskp1svWtSyGx08eIhxab059/EFJMkGlxqs4w1oVH1+uq2Oa+rOsbD4AFWvjwFD0u01/X9AN9jQ5OKmvK38fm8BSdLjD1ht/UEnX9/kJkmufOc9Ii6Fz/3xxfA5EIRnXaeD5HJb6eG1pJSUhsFbcqcyqdelLDpQRrLZu9jByuMPsLq2jk2qKZwtlO1G3V4fPf4ASVKTkicrKtmkeoJCNKlm3CDJkxUVHDZqHBO792VBQWGkEQjFulwBMCjEtsIjNISi4PnfPQlKiRm/eRhf5m2BR1Wha1owAwWJM5UVqK6qgjeggbJllimEgDQMePwB1NXWofLUSahuFxRFAUF07twJbrcb2/K3494581BQVIK5992DoUOvapHphs0DABgEksdthYeLGSr9uo8/ZUJGH0YnZXLA1b/kyDETeOjIUWqWqZxvaGSjWw1qta3i9vpYV19Pl8dLl8dLQ5JLX32TWYOuZueUnuyU3IPznniaPp+vjTVGC6zHoyyX1CbZmrzrjlxk9e6F99d9gu/27ENx+WFUVp7BwP6XwislYmJjQTLovdrjFxcXDymlqV0B7C0shsfrxcOzZmDCuDEYc0MOCICWK2+HEqPQvPUR2YSEgKqq6Ny5M7KzhyM7ezhWvbsac5/8HRyO5qRQyp+/GxJeV0qJywf2x8tLFgEADCnhUBQIRWnLhGyKaXflL4SA3+dD7tSZeOyp30NVPTAMA1HR0RfU9M8hRVGg6TpcTU1QPV7omgbAjCtz583Hrl3fQ7GECIdmXxWYm06AGRzMG8sUNE3D7dPuxd6SMrz9wTosX/E2HA4HNKujSCJIKTskHC1BXKoKRVFQW1uLyVNn4pNNeZgy60F8semrSELYHXgUAI2txBMCEAIOhwNPPPoQusbHIeeXI3D31DsBAJ07d4Km6TjfUN/C7g0pERfTBdHR0RGFa1cQEoZhIDY2Ft0z0uDx+pCZloa01G7tKaQRJHeEBYcWcYAkd373N5YfPBh8v39/Ebuk9ODds8xs1OPX6LKC2foNG1lQVELdMFqtCyJ5qICmcezE2zgiZzyNkID10GNPcv/+orbigP1iR7uBLLyxYRhm0XXmTp3JTsk9uPKd1fR4vPT5/fwybysTM/vwk883UhoGG91qMBp7/OaixhMmgM/n5+jxt3DUuJuDCwA9rM8I1CKQ7bEtJ9IY2fZnewNFUUAhsHTxQgzs1xdz5j+Ncb+ajImTp+D+hx+HTqK0rBzCqgsAcV064+VX3sDmLdvQpVOnYGKnKAp8fj9qz9cHPRotk9R1PVgnAtlY9ygAdgNww8xMIxqbEgJGCwTgUBRkZfXGFx+9j7tvvxWnKs+g8EAZEuLjkeCMx4p3P8D6zzciplM0ohWB9Rs24sWXX4db9cB26yQRHeXAyVMVOH2mClkXXwwIASEEohwOREVFtRUDaGF1W9gBmrvEkm2akTm0f1z8Eq8cMZpbt+W3GNrTp0+zqKiYqtvN3bt3c0TOjeyU3IM5E37NUTdOZHRSd1429Fr+eOIf9Gt6cH1MknPmPUE4U7nu4/UkyYL9hZw68wF+k7+dZKsVmW0+kmR+s0jkg9ZHLbx2kImUnHTHdAJdeMe0mZTWHmhoppi3eSvvm/MIX33tTT4yfwEvH34dBw8byakzH+Cho8eok2yydixIcsu2fCb37s8rrsnhuXPnSJJLXnqZADjNSqX11nPAxvhgqAARl5TNI2Ay2V9YxPvnPMKa6prgBq5hGPT7fJw77wl2SelJxCRx0ZKllIbO48d/ZEFBAX/68TgbGxtZXVPDqqozdKsqt+/YyaHXjWXURZlcvWYdSTIQCLC+vp5Ll73Koz8cizQCrZaU7S7qL0S2aS3/60qKxHQOyR7FzzZsoj/QzOLYsWN87/3VfHT+Ar7wp5f4+vK/cvZDjzKz3+WM6prJZ/7wQsQN4Dao1aLe3JowJ0Y6zOMfpzXLW8wgTdOwY8dOc1noD0BKiQkTxkNKiZHjJqKy6iz+54NVuPaabHh8fnyTvx3fbN+BopJSlB89hiaXG4oQIIAoh4LBA/rj0TmzcM/0KaY7+ftelBwow7S77kBsXGwLxxEyeQnABfMY6ywAESWEkCQdQogqkosBLAOgA4gC7NQA8Hg8WPynZXAmJuBU5WkkJyRg2LCr0dTYhENHf8C022/Dtddk46cTJ7Hg2YXYuHkbHIqCbinJGHHVlciddAsEANXjweDLBiJ72NWIi48Pbh48t+jPyP96AzpFR+P++2bAMIxw72NYmBZbWB1CCMM2o4hbi+HjV1JcwtLSMhYVl/Db7Tvoamrirl176EhM5+NPP0vDMDhn3nzCmcpJd97N7dt3supMVZsmEnoQkrd5Kx+c9wRrqmtItrJ9G8sehm0tRgGAEII0U2ed5AwAewHEA5B5eZuV8tJyDB8+FBVVZ1FcVIyemZkgJX5x5RVISuqKBKcT3+8rxJFDh3DwyA/oc3EvvPPW67go6aJm9VnBSwiBmpoaKEIgLT09+P2m8eNw0/hxweeQGCAtc24CcK+F0SGEINC8rQIhhGF9OAJghv3tTNVZfp23BfsLClFyoAzxCYkoLT+ImuoaCEVB//79cNXlg1BSdhDrN2xCZmo3BAIafD6v2bs0I6vD4TCLomD6fXMw/PoJqD9/3rYASCmDQobZvY1zhhDiSAvTiUS0vJKu67NJ0u/3G9XV1UZdbS1Va9Hu9fro9XiDMWD7jp3s2r0vU/sO4tDrxjD9kiHMHn0j//O1v9Dn8wUP+2yzWLFyFV96+TX6/f72DgI7fsARLgStU5q25gTJ4DnBl19v5sgx/0FnRhaTel3KxO6XUElM5/OLlpj1IidlbVFoXx0DH0GIW3Vdt08dNJIyXGs2OC0QYP72ndy8NZ9vLl/B5N4DePW1N9DrMdMGu014BA+hDh/yXUiI0GPWXSEdtTqtjBDyOWrczewx4EpWVFS0EPQCwMkOHLNeaE1sT+xyADkAFgA4B9N72RutBgA6FCWYBhuGAV3T0NjkQkyXzki6KMnm10I/Ie2FxfOc1UeOEKKcF5qwP5fYgV8NDJOkYRhy2StvcOd3u0hS6rr+f/OrQQjD/5c/e3T4rxB24HcbXddjhbk58L/2u80/AZWuhHmwXL/2AAAAAElFTkSuQmCC">
-<!--link rel="icon" type="image/x-icon" sizes="48x48" href="https://duguaynins-allninsone.hf.space/favicon.ico"-->
-<!--link rel="icon" type="image/png" sizes="48x48" href="/favicon.png"-->
-<!--link rel="shortcut icon" href="/favicon.ico"-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-<meta name="description" content="© 2024 NINS (by JPGT). By using any of the services, it means you have agreed to any content and all content!">
-<link rel="canonical" href="https://copyright.nins.cc/">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="© 2024 NINS (by JPGT). By using any of the services, it means you have agreed to any content and all content!" />
+  <link rel="canonical" href="https://copyright.nins.cc/" />
+  <title translate="no">nins / rewrite.sys</title>
+  <meta name="google" content="notranslate">
 
+  <style>
+    :root {
+      /* 修改為白底黑字配色 */
+      --dos-bg: #ffffff;
+      --dos-fg: #000000;
+      --dos-fg-soft: #333333;
+      --dos-fg-dim: #666666;
+      --dos-invert-bg: #000000;
+      --dos-invert-fg: #ffffff;
+      --dos-border: #000000;
+      --crt-flicker: flicker 0.15s infinite;
+    }
 
-<style></style>
-<link rel="stylesheet" href="https://copyright.nins.cc/children/0001/nins-zzz.css">
-<style>
-#content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  /* 垂直置中 */
-    align-items: center;      /* 水平置中 */
-    text-align: center;       /* 文字置中 */
-}
+    * { box-sizing: border-box; }
 
-iframe.skiptranslate, #goog-gt-tt { display: block; pointer-events: auto; }
-</style>
+    @keyframes flicker {
+      0%   { opacity: 0.99; }
+      5%   { opacity: 1.0; }
+      10%  { opacity: 0.99; }
+      100% { opacity: 1.0; }
+    }
 
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--dos-bg);
+      color: var(--dos-fg);
+      font-family: "Courier New", Consolas, Monaco, monospace;
+      /* 移除綠色發光，改為簡潔陰影或無陰影 */
+      text-shadow: none;
+      min-height: 100%;
+    }
+
+    /* 調整掃描線特效，使其在白底下更自然 */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.03),
+        rgba(0,0,0,0.03) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      z-index: 9999;
+      opacity: 0.1;
+    }
+
+    .screen {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      min-height: 100vh;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px;
+      border: 2px solid var(--dos-border);
+      background: transparent;
+      animation: var(--crt-flicker);
+    }
+
+    .dos-block {
+      border: 1px solid var(--dos-border);
+      padding: 15px;
+      margin-bottom: 15px;
+      background: rgba(0, 0, 0, 0.02);
+    }
+
+    .topbar {
+      font-weight: bold;
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--dos-border);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    .line-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
+      color: var(--dos-fg);
+    }
+
+    .btn {
+      background: transparent;
+      color: var(--dos-fg);
+      border: 1px solid var(--dos-border);
+      padding: 12px 20px;
+      font: inherit;
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      transition: all 0.2s;
+    }
+
+    .btn:hover, .btn:active {
+      background: var(--dos-invert-bg);
+      color: var(--dos-invert-fg);
+    }
+
+    .text-input {
+      background: #ffffff;
+      color: var(--dos-fg);
+      border: 1px solid var(--dos-border);
+      padding: 10px;
+      font: inherit;
+      outline: none;
+      width: 100%;
+      margin-bottom: 10px;
+      min-height: 50px;
+    }
+
+    #output_display {
+      border: 1px dashed var(--dos-border);
+      min-height: 300px;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      overflow-y: auto;
+      background: #f9f9f9;
+    }
+
+    .status-msg {
+      margin-top: 10px;
+      color: var(--dos-fg-dim);
+    }
+
+    .blink::after {
+      content: "_";
+      animation: blink-anim 1s step-start infinite;
+    }
+    @keyframes blink-anim { 50% { opacity: 0; } }
+
+    @media (min-width: 600px) {
+      .btn { width: 500px; }
+      .text-input { width: 500px; }
+    }
+
+    /* 覆蓋 select 原本的藍色/白色預設樣式 */
+    #languages {
+      background-color: #fff !important;
+      color: #000 !important;
+      border: 1px solid #000 !important;
+    }
+    
+    .text {
+      white-space: nowrap;
+      white-space: normal; /* 測試 */
+      display: inline-block;
+      /* padding: 12px; */
+      font-size: 12px;
+      color: #1d1d1f;
+      transition: transform 0.1s ease-out; /* 增加一點平滑感 */
+      will-change: transform;
+    }
+    .text:empty {
+      display: none;
+    }
+    .wrapper {
+      width: 100%;
+      overflow: hidden;
+      /* border: 1px solid #d2d2d7; */
+      /* border-radius: 8px; */
+      background: #fafafa;
+      position: relative;
+    }
+  </style>
+  <script src="https://copyright.nins.cc/children/0001/nins-cookie.js"></script>
+  <script src="https://copyright.nins.cc/children/0001/nins-huggingface.js"></script>
 </head>
-<body>
-
-<!-- WORLD ================================================== -->
-<script src="https://copyright.nins.cc/children/0001/nins-world.js"></script>
-<!-- UPDATE ================================================== -->
-<script src="https://copyright.nins.cc/children/0001/nins-update.js"></script>
-<!-- DIALOG ================================================== -->
-<script src="https://copyright.nins.cc/children/0001/nins-dialog.js"></script>
-<!-- TRANSLATE ================================================== -->
-<script src="https://copyright.nins.cc/children/0001/nins-translate.js"></script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<body translate="no">
   
+  <div class="screen">
+    <div class="topbar">
+      <span>© NINS / REWRITE.SYS [2026.04.18]</span>
+      <span>DUGUAYNINS</span>
+    </div>
     
-    
-    
-<div class="zIndex app center y-column" style="z-index: 90909;  /* 確保在最高層 */
-  cursor: default;
-  /*background: linear-gradient(white, transparent);*/
-  background: white;
-">
-    <strong id="anything" style=""><b translate="no">© nins. </b>Use the Google Translate element for a simple translation.</strong>
-    <div id="title" style="" translate="no">
-    <div style="margin: 10px;" onclick="document.getElementById('DialogCheck').showModal();console.log(new Date().toLocaleString(), '🙉');">
-    nins/translate
-    </div></div>
-          
-<!-- 放置你原有的布局：HTML -->
-
-
-    <div id="content" class="" style="background: #FFFFFF; overflow:auto; width:100%; flex:1; border: 1px solid #ccc; color: black;">
+    <div class="dos-block" style="display: none;">
+      <div class="line-label">C:\> CONFIG_SYSTEM_PROMPT</div>
+      <input type="text" id="input_sys" class="text-input" placeholder="DEFINE AI ROLE...">
+      <div class="status-msg">STATUS: PROMPT_IDLE</div>
     </div>
 
+    <div class="dos-block">
+      <div class="line-label">C:\> TERMINAL</div>
+      <div id="google_translate_element" style="display: none;"></div><br>
+      <div>
+        <select id="languages" class="btn" translate="yes"></select>
+      </div><br>
+      <div id="input_msg" contenteditable="true" class="text-input editor"></div>
+      <div id="input" class="copy text wrapper"></div><br>
+      <button class="btn" id="input_msgbtn" onclick="send()">[ F1 ] REWRITE</button>
+      <div id="scores" class="text wrapper"></div><br><br><br>
 
-<!-- 放置你原有的布局：HTML -->
-            
+      <div id="source" contenteditable="false" class="copy text-input editor" style="background: #eee;"></div>
+      <div id="source_pro" class="copy text wrapper"></div><br>
+      <div id="target" contenteditable="false" class="copy text-input editor" style="background: #eee;"></div>
+      <div id="target_pro" class="copy text wrapper"></div><br>
+      <div id="intermediate" contenteditable="false" class="copy text-input editor" style="background: #eee;"></div>
+      <div id="intermediate_pro" class="copy text wrapper"></div><br>
+      
+      <input type="checkbox" id="MQM_AUTO">
+    </div>
 
-    <div id="notice" style="" translate="yes">
-    <div style="margin: 10px;" onclick="document.getElementById('DialogTrans').showModal()">
-    By sending a message to this service, it means you have agreed to any content and all content!
-    </div></div>
-    <strong id="copyright" style="" translate="no">© 2024 NINS (by JPGT).</strong>
-</div>
+    <div class="dos-block" style="display: none;">
+      <div class="line-label">C:\> DATA_STREAM_MONITOR</div>
+      <div id="output_display">
+        WARNING: ALL TRANSMISSIONS ARE LOGGED BY NINS PROTOCOL.<br>
+        INITIALIZING_INTERFACE... [OK]<br>
+        READY_FOR_COMMUNICATION... <span class="blink"></span>
+      </div>
+    </div>
 
-<!-- HTML ================================================== -->
-    
-<!-- 放置你原有的布局：JS -->
- 
+    <div style="text-align: center; font-size: 0.75rem; color: var(--dos-fg-dim);">
+      By using any of the services, it means you have agreed to any content and all content!
+    </div>
+  </div>
+
+  <script type="module">
+    // 原有的 JavaScript 邏輯保持不變
+  </script>
 <script>
-    let voices = null;
-    
-    // 監聽的初始化語音****
-    ///window.speechSynthesis.onvoiceschanged = () => {
-    window.speechSynthesis.addEventListener('voiceschanged', () => {
-        voices = window.speechSynthesis.getVoices();
-        ///voices = speechSynthesis.getVoices();
-        console.log("Voices loaded:", voices.length);
-        console.log("Voices loaded:", voices);
-        
-        /*
-        voices.forEach((voice, index) => {
-          console.log(
-            `${index + 1}. 名稱: ${voice.name}, 語言: ${voice.lang}, 是否預設: ${voice.default}`
-          );
-        });
-        */
-      
-        if (voices.length > 0) {
-            ///alert("GET TTS VOICE＝: " + voices.length);
-            ///document.getElementById("stateTTS").textContent = "👄（TTS＝" + voices.length + "）";  // 暫時關閉此
-        } else {
-            ///document.getElementById("stateTTS").textContent = "👄（TTS＃" + 0 + "）";
-        }
-        
+
+function log(msg) {
+  ///document.getElementById("output_display").textContent += msg + "\n";
+  ///document.getElementById("output_display").innerHTML += msg + "<br>";
+  ///document.getElementById("output_display").innerHTML += `<span translate="no">${msg}</span><br>`;
+
+  ///let time = Date.now();
+  let time = "⏳　" + new Date().toISOString()
+  const div = document.createElement("div");
+  div.innerHTML = `<span translate="no">${time}　${msg}</span>`;
+  ///div.innerHTML = `<pre translate="no">${msg}</pre>`;
+  document.getElementById("output_display").prepend(div);
+}
+
+
+
+async function HuggingFaceAPI(inputs=null) {
+  // 20251205
+  try {
+    console.log(inputs);
+    const { group, space, path, payload } = inputs;
+    const baseUrl = `https://${group}-${space}.hf.space/${path}`;  ///"https://duguaynins-RedirectAPI.hf.space/path";
+
+    const response = await fetch(baseUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
     });
 
-    function languageScript(tag) {
-      return tag.split('-').slice(0, 2).join('-');
+    const data = await response.json();
+    console.log(data);
+    return data;
+  
+  } catch (err) {
+    console.error(err);
+    return {result: {confidences: null, label: `<a translate="no" href="mailto:duguaynins@gmail.com?subject=${encodeURIComponent( new Date().toISOString() )}&body=${encodeURIComponent( err.stack )}">mailto:duguaynins@gmail.com</a>` }};  ///escapeHtml(err.stack)
+  }
+}
+
+async function generate(params) {  
+  ///console.log('翻譯文本:', params);
+  ///const system = document.getElementById("input_sys").value;
+  ///const message = document.getElementById("input_msg").value;
+
+  const { sys = system, usr = message, models } = params;
+  if (!models) { return; }
+  if (!sys) { return "sys?"; }
+  if (!usr) { return "usr?"; }
+
+  
+  const inputs = { "inputs": {models:models, system:sys, user:usr} }
+  const outputs = await HuggingFaceAPI({  ///HuggingFaces  ///HuggingFaceAPI
+    group: "duguaynins",
+    space: "Server",  ///MultipleLLMs  ///RedirectAPI
+    path: "generate/llms",  ////run/predict, api/predict, predict, /queue/join
+    payload: inputs,
+  }); 
+
+  console.log("INPUT:", inputs);
+  console.log("OUTPUT:", outputs);
+  ///return outputs.result.label;
+  return outputs.result;
+}
+
+async function MQM(params) { 
+  ///console.log('頻道確認:', params);
+  const { system, user, models, intermediate } = params;
+  if (!models) { return; }
+  if (!user) { return "usr?"; }
+  if (!system) { return "sys?"; }
+
+  const inputs = { "inputs": { "system": system, "user": user, "models": models, "intermediate": intermediate  } };
+  const outputs = await HuggingFaceAPI({
+    group: "duguaynins",
+    space: "Server",
+    path: `generate/mqm?system=${null}&user=${null}`,  ///embeddings/meta
+    payload: inputs,
+  }); 
+
+  console.log("INPUT:", inputs);
+  console.log("OUTPUT:", outputs);
+  return outputs.result;///.label
+}
+
+async function rewrite(params) { 
+  ///console.log('頻道確認:', params);
+  const { system, user, models } = params;
+  if (!models) { return; }
+  if (!user) { return "usr?"; }
+  if (!system) { return "sys?"; }
+
+  const inputs = { "inputs": { "system": system, "user": user, "models": models  } };
+  const outputs = await HuggingFaceAPI({
+    group: "duguaynins",
+    space: "Server",
+    path: `generate/rewrite?system=${null}&user=${null}`,  ///embeddings/meta
+    payload: inputs,
+  }); 
+
+  console.log("INPUT:", inputs);
+  console.log("OUTPUT:", outputs);
+  return outputs.result;///.label
+}
+
+const tag = "_rewrite";  ///_disambiguated#消除歧義  ///_SupplementaryMeaning#補充語意  ///_ExplainAmbiguity#解釋歧義
+/*
+const strings = `{
+"zh-TW":  ___,
+"zh-TW_disambiguated":  ___,
+"ko": ___,
+"ko_disambiguated": ___,
+"en": ___,
+"en_disambiguated": ___,} 
+`;  */
+
+///const retextV1 = rewrite({ "system": strings, "user": "銀行", "models": "gpt-4o-mini" });
+///const retextV2 = rewrite({ "system": strings, "user": "銀行", "models": "gpt-4o" });
+
+// ========================
+// 監聽下拉選單
+// ========================
+document.getElementById("languages").addEventListener("change", function (e) {
+  console.log(e.target.value);
+  const tl_buf = e.target.value;
+  const sl_buf = navigator.language;
+  ///交換語言？
+  init(tl_buf, "");  ///20260428
+});
+
+async function init(tl="", sl="", il="") {
+  ///document.getElementById("languages").value = tl;  ///配合初始化的追加
+  const intermediate = il || "en";
+  const target = tl || document.getElementById("languages").value;
+  const source = sl || "auto" || navigator.language;
+  document.getElementById("intermediate").innerText = "format(il): "+intermediate;  ///field
+  document.getElementById("source").innerText = "source(sl): "+source;
+  document.getElementById("target").innerText = "target(tl): "+target;
+  document.getElementById("scores").innerText = "";
+}///init("en", "");  ///配合初始化的追加
+
+let data_rewrite;
+let data_mqm;
+async function send() {
+  ///init();
+  ///init("", "", "");
+  setTimeout(() => {
+    init("...", "...", "...");
+  }, 1);
+  setTimeout(() => {
+    init();
+  }, 1000);
+  const intermediate = "en";  ///en, de
+  const target = document.getElementById("languages").value;
+  const source = navigator.language;
+  const strings = `{
+"${source}":  ___,
+"${source}${tag}":  ___,
+"${intermediate}": ___,
+"${intermediate}${tag}": ___,
+"${target}": ___,
+"${target}${tag}": ___,} 
+`;
+  ///did you have a good day today?
+  console.log(strings);
+
+  ///document.getElementById("input_msg").disabled = true;  ///20260427
+  const sys = document.getElementById("input_sys").value;
+  ///const usr = document.getElementById("input_msg").value;
+  const usr = document.getElementById("input_msg").innerText.trim();  ///textContent：純原始文字（效能較好）  ///追加.trim();
+  ///document.getElementById("input_msg").value = "";
+  log("🧠　" + usr);  ///🧠✨💡
+  ///{ "text": xmsg, "source": null, "target": {tl:tlang, il:ilang} }
+  ///log("♊　" + await HuggingFaceAPI("duguaynins/MultipleLLMs","/fn_main",{models:'gemini-2.5-flash',system:document.getElementById("input_sys").value ,user:document.getElementById("input_msg").value }) );
+  ///log("🤖　" + await HuggingFaceAPI("duguaynins/MultipleLLMs","/fn_main",{models:'gpt-4o-mini',system:document.getElementById("input_sys").value ,user:document.getElementById("input_msg").value }) );
+  ///log("🤖＋" + await HuggingFaceAPI("duguaynins/MultipleLLMs","/fn_main",{models:'gpt-4o',system:document.getElementById("input_sys").value ,user:document.getElementById("input_msg").value }) );
+  
+  ///log("🤖　" + await generate({ "sys": sys, "usr": usr, "models": 'gpt-4o-mini' }) );
+  ///log("🤖＋" + await generate({ "sys": sys, "usr": usr, "models": 'gpt-4o' }) );
+  
+  setTimeout(() => {
+    init("...", "...", "...");
+  }, 1);
+  setTimeout(() => {
+    init();
+    if (!usr) { document.getElementById("input_msg").focus(); }
+  }, 1000);
+  
+  
+  const gpt_4o_mini_rewrite = await rewrite({ "system": strings, "user": usr, "models": 'gpt-4o-mini' });
+  log("🤖　" + gpt_4o_mini_rewrite );
+  const data = JSON.parse(gpt_4o_mini_rewrite);
+  data_rewrite = data;
+  downloadJSON(data, usr);
+  const il = data[intermediate];
+  const il_pro = data[intermediate+tag];  ///2 3
+  const sl = data[source];
+  const sl_pro = data[source+tag];  ///0 1
+  const tl = data[target];
+  const tl_pro = data[target+tag];  ///4 5
+
+
+  document.getElementById("input").innerText = usr;  ///20260504
+
+  document.getElementById("intermediate").innerText = il;  ///field
+  document.getElementById("source").innerText = sl;
+  document.getElementById("target").innerText = tl;
+  document.getElementById("intermediate_pro").innerText = il_pro;  ///field
+  document.getElementById("source_pro").innerText = sl_pro;
+  document.getElementById("target_pro").innerText = tl_pro;
+
+  data["embeddings"] = Object.fromEntries(
+    Object.entries(data["embeddings"]).map(([k, v]) => [k, (v * 100).toFixed(1) + "%"])
+  );
+  document.getElementById("scores").innerText = JSON.stringify(data["embeddings"]);  ///embeddings OR labse
+
+  ///document.getElementById("input_msg").value = "";  ///20260427
+  ///document.getElementById("input_msg").disabled = false;  ///20260427
+
+/*
+  const notags = `{
+"${source}":  "${document.getElementById("source").innerText}",
+"${intermediate}": "${document.getElementById("intermediate").innerText}",
+"${target}": "${document.getElementById("target").innerText}",} 
+`;
+  const gpt_4o_mini_MQM = await MQM({ "system": source, "user": notags, "models": 'gpt-4o-mini', "intermediate": document.getElementById("intermediate").innerText });
+  console.log(gpt_4o_mini_MQM);
+  ///const mqm = gpt_4o_mini_MQM;
+  const mqm = JSON.parse(gpt_4o_mini_MQM);  ///字串轉物件
+  ///downloadJSON(mqm, notags);  ///il
+  
+  document.getElementById("scores").innerText += "\n";
+  ///document.getElementById("scores").innerText += JSON.stringify(mqm);  ///物件轉字串
+  ///document.getElementById("scores").innerText += `{"score":${mqm["MQM"]["translation_evaluation_score_percentage"]},"details":${mqm["MQM"]["translation_evaluation_MQM_error_details"]}}`;
+  
+  document.getElementById("scores").innerText += JSON.stringify(mqm["MQM"]);  ///物件轉字串
+*/
+
+  ///統整下載：不方便使用，因為MQM容易錯誤
+  /*
+  const C = {
+    translation_inputs: usr,
+    translation_rewrite: data,
+    translation_evaluate: mqm,
+  };
+  downloadJSON(C);  */
+}
+
+
+document.getElementById("input_msg").addEventListener("keydown", function(e) {    
+    if (e.key === "Enter") {
+        ///e.preventDefault();  // 阻止 Enter 鍵的預設行為（即防止跳轉到下一個輸入框）
+        ///send();  ///20260428
     }
-    function languageRegion(tag) {
-      const match = tag.match(/^([^-]+)-([^-]+)$/); // 嘗試匹配兩段
-      if (match) return match[1] + '-' + match[2];
-      
-      // 如果有三段以上，取第一段 + 最後一段
-      const parts = tag.split('-');
-      if (parts.length >= 2) return parts[0] + '-' + parts[parts.length - 1];
-
-      return tag; // 只有語言
-    }
-    
-    function handleVoice(language) {
-      // 設定預設語音
-      ///const language = languageRegion(navigator.language || navigator.userLanguage || "en-US");  // 閱讀母語
-      const voice = voices.find(v => v.lang.startsWith( new URL(window.location.href).searchParams.get("lang")||language )) || 
-                          ///voices.find(v => v.lang === language) || 
-                          voices.find(v => v.lang.startsWith( language.replace(/_/g, "-") )) || // zh-TW
-                          voices.find(v => v.lang.startsWith( language.replace(/-/g, "_") )) || // zh_TW
-                          voices.find(v => v.lang.startsWith( language.slice(0, 2) ));
-      ///const index = voices.indexOf(voice);
-      ///const voice = voices[parseInt(voiceSelect.value)]
-      return voice.lang;
-    }
-
-    // 處理文字轉語音****
-    // 的按鈕點擊事件****
-    function handleTTS(id, lang = "") {
-        ///document.getElementById(id).style.display = "";
-        
-        // 移除再加上 class，確保每次點擊都能觸發動畫
-        document.getElementById(id).classList.remove('breathe');
-        void document.getElementById(id).offsetWidth; // 強制 reflow
-        document.getElementById(id).classList.add('breathe');
-    
-
-        // 20250805
-        // 製作拼音
-        // 新增庫：src="https://cdn.jsdelivr.net/npm/pinyin-util@latest/dist/pinyin-util.min.js"
-        if (document.getElementById(id).style.display === "none") {
-            document.getElementById(id).style.display = "";
-            // 如果是隱藏才執行
-            if (language.slice(0, 2) === "ja") { }
-            if (language.slice(0, 2) === "zh") {
-                ///const pinyin = pinyinUtil.getPinyin(content, ' ', true);
-                ///document.getElementById(id).innerHTML += "（" + pinyin + "）";
-            }
-        }
-        
-        if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-            alert("No TTS.")
-            ///alert("此瀏覽器不支援語音合成功能（TTS）。請改用 Chrome 或 Safari。");
-            return;
-        }
-        if (!voices || voices.length === 0) {
-            alert("No TTS voices.")
-            ///alert("語音清單尚未載入，請稍後再試。");
-            return;
-        }
-        console.log("Voices loaded:", voices.length);
-        
-        // 製作文字轉語音***
-        // 找到文本**
-        const input = document.getElementById("InputRate");
-        const element = document.getElementById(id);
-        const text = element.textContent;
-        //if (element) { alert("副文字內容為： " + element.textContent); }
-        // 取得語言**
-        const index = text.lastIndexOf("👄");
-        const before = text.substring(0, index);        // 👄 前的內容
-        const after = text.substring(index + "👄".length); // 👄 後的內容（+1）
-        // 格式化**
-        ///const content = text;  ///before.substring(1 + "🔣".length);
-        ///const language = lang;  ///after.substring(0, after.length - 1)   // 或 after = after.slice(0, -1);
-        ///const talkrate = 1.2;  ///input.value
-        const content = before.substring(1 + "🔣".length);
-        ///const language = after.substring(0, after.length - 1)   // 或 after = after.slice(0, -1);
-        let language = after.substring(0, after.length - 1);language = handleVoice(language)
-        const talkrate = 1.2;  ///input.value
-        console.log("content:", content);
-        console.log("language:", language);
-        console.log("talkrate:", talkrate);
-      
-        // 取得聲音
-        ///const lang = tlang.slice(0, 2);
-        const msg = new window.SpeechSynthesisUtterance();  // "你好，歡迎使用語音系統
-        // 不設定 msg.lang，結果不一定正確（可能變英文腔）
-        msg.text = content;
-        msg.lang = language;           // 語言代碼
-        msg.rate = talkrate;           // 語速 0.1 ~ 10
-        msg.volume = 1;                // 音量 0~1
-        msg.pitch = 1;                 // 音高 0~2
-        //msg.voice = voices[i];        // 可選擇語音
-        //msg.voice = window.speechSynthesis.getVoices()[0];
-        //msg.voice = voices.find(v => v.lang === language) || voices.find(v => v.lang.startsWith(language.slice(0, 2)));  
-        // voice 導致第一次非默認會失敗，因此註解。
-        
-        if (window.speechSynthesis.speaking) {
-            window.speechSynthesis.cancel();    // ✅ 清除先前語音，避免阻塞**
-            window.speechSynthesis.speak(msg);  // ✅ 播放語音
-        } else if (!speechSynthesis.speaking) {
-            window.speechSynthesis.speak(msg);  // ✅ 播放語音
-        }
-    }
-
-    
-    if (!window.google?.translate) {  }
-    if (false) {  }
-    else {  }
-    window.addEventListener("DOMContentLoaded", () => {
-        let sl = new URL(window.location.href).searchParams.get("sl") || "en-US";
-        let tl = new URL(window.location.href).searchParams.get("tl") || navigator.language || navigator.userLanguage || "zh-TW";
-        let text = new URL(window.location.href).searchParams.get("text") || "Please enter text in the URL.";
-
-        document.getElementById("content").innerHTML = `<p translate="no" id="sl" onclick="handleTTS('sl', '${sl}')">（<span translate="no">🔣${text}</span><span translate="no">👄${sl}</span>）</p><br>
-                                                        <p translate="no" id="tl" onclick="handleTTS('tl', '${tl}')">（<span translate="yes">🤖${text}</span><span translate="no">👄${tl}</span>）</p>`;
-
-        setTimeout(() => { if (!navigator.userAgent.includes("Chrome")) { console.log("USE GOOGLE!"); window.open("https://www.google.com/chrome", "_blank", "noopener,noreferrer"); } else { console.log("HEY GOOGLE!") }  }, 2000);
-    });
+});
 </script>
-<!-- 放置你原有的布局：JS -->
+<!-- 放置你原有的布局 -->
  
+<!-- LOG ================================================== -->
+<script type="text/javascript">  // dialog.js
+function downloadJSON(data, inputs="", app="rewrite"){
+  ///data["inputs"] = inputs;
+  const blob = new Blob(
+    [JSON.stringify(data, null, 2)],
+    { type: "application/json" }
+  );
+
+  const url = URL.createObjectURL(blob);
+
+  const timestamp = Date.now();
+  console.log(timestamp);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `nins_${app}_${timestamp}.json`;  ///data.json
+  a.click();
+
+  URL.revokeObjectURL(url);
+}
+</script>
+    
+
+<!-- TRANSLATE ================================================== -->
+<script type="text/javascript">  // translate.js
+// ========================
+// 翻譯本體
+// ========================
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: navigator.language,   // 原始語言   ///navigator.language OR 'en'
+    includedLanguages: '',  ///zh-TW,ja,ko,en,hi,zh-CN
+    ///layout: google.translate.TranslateElement.InlineLayout.SIMPLE,  ///註解後就不會自動開始翻譯了讚讚
+  }, 'google_translate_element');
+}
+
+// ========================
+// 翻譯監聽
+// ========================
+// 監聽 Google Translate 下拉選單
+const observer = new MutationObserver(() => {
+    const select = document.querySelector(".goog-te-combo");
+
+    if (!select || select.dataset.done) return;
+
+    // 👉 等 option 出現
+    if (select.options.length <= 1) return;
+
+    select.dataset.done = "true";
+
+    const languages = [...select.options]
+        .filter(opt => opt.value)
+        .map(opt => ({
+            value: opt.value,
+            text: opt.textContent.trim()
+        }));
+
+    console.log("語言清單:", languages);
+    // 塞到你的 select
+    const target = document.getElementById("languages");
+    if (target) {
+        target.innerHTML = "";
+
+        languages.forEach(lang => {
+            const option = document.createElement("option");
+            option.value = lang.value;
+            option.textContent = lang.text;
+            target.appendChild(option);
+        });
+    }
+
+    // 停止觀察（避免重複）
+    observer.disconnect();
+
+    
+    ///init();
+    const option = document.createElement("option");
+    option.value = "en";
+    option.textContent = "English";
+    target.insertBefore(option, target.firstChild);
+    ///target.appendChild(option);  
+
+    ///did you have a good day today?
+    const defaults = "en";  ///en, de
+    target.value = defaults;  ///自動選擇語言
+    init(defaults);
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+
+function setLanguage(lang) {
+    const select = document.querySelector(".goog-te-combo");
+    if (!select) return;
+
+    select.value = lang;
+    select.dispatchEvent(new Event("change"));
+}
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"> </script>
+
+
+
+<script>
+    // [您的原始腳本邏輯...]
+    // 為了節省篇幅，此處省略與您提供的原始碼相同的 JS 邏輯
+    // 請確保將 rewrite.html 下方的所有 <script> 標籤內容完整複製回來
+document.querySelector('#MQM_AUTO').addEventListener('change', async (event) => {
+  // event.target 即為觸發事件的 checkbox
+  if (event.target.checked) {
+    console.log("✅");
+    document.querySelector('#MQM_AUTO').disabled = true;
+  } else {
+    console.log("❌");return;
+  }
+
+  const intermediate = "en";  ///en, de
+  const target = document.getElementById("languages").value;
+  const source = navigator.language;
+  const notags = `{
+"${source}":  "${document.getElementById("source").innerText}",
+"${intermediate}": "${document.getElementById("intermediate").innerText}",
+"${target}": "${document.getElementById("target").innerText}",} 
+`;
+  if (!document.getElementById("input").innerText) {  ///20260504
+    document.querySelector('#MQM_AUTO').checked = false;  ///***
+    document.querySelector('#MQM_AUTO').disabled = false;
+    console.log("No Result.");
+    return; }
+  const gpt_4o_mini_MQM = await MQM({ "system": source, "user": notags, "models": 'gpt-4o-mini', "intermediate": document.getElementById("intermediate").innerText });
+  console.log(gpt_4o_mini_MQM);
+  ///const mqm = gpt_4o_mini_MQM;
+  const mqm = JSON.parse(gpt_4o_mini_MQM);  ///字串轉物件
+  data_mqm = mqm;
+  ///downloadJSON(mqm, notags);  ///il
+  
+  // 內容溢出手機畫面
+  // 所以關閉此顯示
+  // 只在表單中使用  ///20260504
+  ///document.getElementById("scores").innerText += "\n";
+  ///document.getElementById("scores").innerText += JSON.stringify(mqm["MQM"]);  ///物件轉字串
+
+  
+  ///統整下載：不方便使用，因為MQM容易錯誤
+  const translations = {
+    translation_inputs: document.getElementById("input").innerText.trim(),  ///20260504
+    translation_rewrite: data_rewrite,
+    translation_evaluate: data_mqm,
+  };
+  downloadJSON(translations,"","REWRITE_and_MQM");
+
+
+  
+  if (true) { 
+    document.querySelector('#MQM_AUTO').checked = false;  ///***
+    document.querySelector('#MQM_AUTO').disabled = false;
+    console.log("END Result.");
+    return; }
+});
+</script>
+
+
+<script>
+document.querySelectorAll('.copy').forEach(function(el) {  ///20260504
+  el.addEventListener('click', function() {
+    
+    if (!document.getElementById("input").innerText) {
+      return; }
+    const text = el.innerText;
+
+    document.getElementById("input_msg").innerText = text;  ///20260504
+    navigator.clipboard.writeText(text)/**/
+      .then(() => {
+        console.log('copy!:', text);
+      })
+      .catch(err => {
+        console.error('copy?:', err);
+      });
+  });
+});
+</script>
+
+
 </body>
 </html>
