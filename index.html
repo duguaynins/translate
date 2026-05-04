@@ -708,7 +708,16 @@ const allParams = {
 console.log("allParams", allParams);
 if ("data" in allParams) {
   document.getElementById("input_msg").innerText = allParams["data"];
-  ///send();  ///需要等待讀取
+  
+  ///send();  ///需要等待讀取 
+  /*
+  const timer = setInterval(() => {
+    const select = document.querySelector("languages");
+    if (select && select.options.length > 0) {
+      clearInterval(timer);
+      send();
+    }
+  }, 100);  */
 }
 
 </script>
