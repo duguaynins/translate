@@ -223,7 +223,7 @@
       <div id="intermediate" contenteditable="false" class="copy text-input editor" style="background: #eee;"></div>
       <div id="intermediate_pro" class="copy text wrapper"></div><br>
       
-      <input type="checkbox" id="MQM_AUTO">
+      <input type="checkbox" id="MQM_AUTO" style="display: none;">
     </div>
 
     <div class="dos-block" style="display: none;">
@@ -395,7 +395,7 @@ async function send() {
   setTimeout(() => {
     init();
   }, 1000);
-  const intermediate = "en";  ///en, de
+  const intermediate = "en-US";  ///en, de, en-US  ///20260504  F1鎖定
   const target = document.getElementById("languages").value;
   const source = navigator.language;
   const strings = `{
@@ -425,11 +425,15 @@ async function send() {
   
   setTimeout(() => {
     init("...", "...", "...");
+    if (true) {
+      document.getElementById("input_msgbtn").disabled = true; }
   }, 1);
   setTimeout(() => {
     init();
-    if (!usr) { document.getElementById("input_msg").focus(); }
-  }, 1000);
+    if (!usr) { 
+      document.getElementById("input_msg").focus();
+      document.getElementById("input_msgbtn").disabled = false;return; }
+  }, 500);
   
   
   const gpt_4o_mini_rewrite = await rewrite({ "system": strings, "user": usr, "models": 'gpt-4o-mini' });
@@ -489,6 +493,11 @@ async function send() {
     translation_evaluate: mqm,
   };
   downloadJSON(C);  */
+  
+  ///複製網址?data=
+  const backurl = "https://translate.nins.cc/?data=" + encodeURIComponent( il.replace(/ /g, "-") );
+  navigator.clipboard.writeText(backurl);
+  document.getElementById("input_msgbtn").disabled = false;
 }
 
 
@@ -684,6 +693,24 @@ document.querySelectorAll('.copy').forEach(function(el) {  ///20260504
       });
   });
 });
+</script>
+
+
+<script>
+const searchParams = new URLSearchParams(window.location.search);
+const hashParams = new URLSearchParams(window.location.hash.substring(1));
+
+const allParams = {
+  ...Object.fromEntries(searchParams.entries()),
+  ...Object.fromEntries(hashParams.entries())
+};
+
+console.log("allParams", allParams);
+if ("data" in allParams) {
+  document.getElementById("input_msg").innerText = allParams["data"];
+  ///send();  ///需要等待讀取
+}
+
 </script>
 
 
