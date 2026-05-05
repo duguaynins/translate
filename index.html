@@ -2,6 +2,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,6 +188,12 @@
       background: #fafafa;
       position: relative;
     }
+    .truncate {
+      /* width: 200px;            必須設定寬度（可以是 px, %, 或 flex 佔位） */
+      white-space: nowrap;     /* 強制文字不換行 */
+      overflow: hidden;        /* 隱藏超出容器的部分 */
+      text-overflow: ellipsis; /* 當文字溢出時顯示省略號 */
+    }
   </style>
   <script src="https://copyright.nins.cc/children/0001/nins-cookie.js"></script>
   <script src="https://copyright.nins.cc/children/0001/nins-huggingface.js"></script>
@@ -216,6 +223,7 @@
       <button class="btn" id="input_msgbtn" onclick="send()">[ F1 ] REWRITE</button>
       <div id="scores" class="text wrapper"></div><br><br><br>
 
+      <div id="urls" class="copy text wrapper truncate"></div>
       <div id="source" contenteditable="false" class="copy text-input editor" style="background: #eee;"></div>
       <div id="source_pro" class="copy text wrapper"></div><br>
       <div id="target" contenteditable="false" class="copy text-input editor" style="background: #eee;"></div>
@@ -496,9 +504,10 @@ async function send() {
   
   ///複製網址?data=
   const backurl = "https://translate.nins.cc/?data=" + encodeURIComponent( il.replace(/ /g, "-") );
-  navigator.clipboard.writeText(backurl);
+  ///navigator.clipboard.writeText(backurl);  ///不需要直接複製，改為顯示在某個DIV框中
+  document.getElementById("urls").innerText = backurl;
   document.getElementById("input_msgbtn").disabled = false;
-}
+} ///send();
 
 
 document.getElementById("input_msg").addEventListener("keydown", function(e) {    
